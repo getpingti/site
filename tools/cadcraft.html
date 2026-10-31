@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>cadcraft 评测 · 替代 SolidWorks / AutoCAD · 开源平替</title>
-<meta name="description" content="CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust 刚冒头，还没实测：先看它替什么、去哪里下，实测结论随后补。">
+<title>CADCraft 评测 · 替代 SolidWorks / AutoCAD · 开源平替</title>
+<meta name="description" content="纯 Rust 写的开源 2D/3D CAD，命令行、对象捕捉、图层、标注、填充、块和 DXF 都按 AutoCAD 的习惯来。 画平面图、改 DXF、出 PDF 够用；早期开发阶段，DWG 只写到 R2000，没建模的实体会丢。">
 <link rel="canonical" href="https://getpingti.com/tools/cadcraft">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/style.css">
@@ -24,23 +24,23 @@
   </div>
 </header>
 <main class="article">
-  <div class="crumb"><a href="/">开源平替</a> / 设计 / cadcraft</div>
-  <h1>cadcraft</h1>
-  <p class="lead">CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust</p>
+  <div class="crumb"><a href="/">开源平替</a> / 设计 / CADCraft</div>
+  <h1>CADCraft</h1>
+  <p class="lead">纯 Rust 写的开源 2D/3D CAD，命令行、对象捕捉、图层、标注、填充、块和 DXF 都按 AutoCAD 的习惯来。</p>
   <div class="meta"><span>设计</span><span>★ 7,261</span><span>本周 ↑ 315</span><span>Apache-2.0</span><span>见仓库</span></div>
 
   <div class="callout">这条是自动收录：项目信息与下载链接已核对，实测结论还没补。先收藏，等实测。</div>
-  <div class="verdict-box">刚冒头，还没实测：先看它替什么、去哪里下，实测结论随后补。</div>
+  <div class="verdict-box">画平面图、改 DXF、出 PDF 够用；早期开发阶段，DWG 只写到 R2000，没建模的实体会丢。</div>
 
   <h2>它能替代什么</h2>
   <ul><li>SolidWorks / AutoCAD</li></ul>
 
   <h2>实测</h2>
-  <p>自动收录：项目 23 天前上线，目前 7,261 星，许可证 Apache-2.0。官方定位是「CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust」。下载链接指向官方 release；实测结论会在后续更新里补。</p>
+  <p>CADCraft 把 AutoCAD 的命令行工作流搬了过来：输入 L、点两个点、输入 @5&lt;45，回车；对象捕捉、极轴、正交、直接距离输入、夹点、右键重复都和原来一样。</p><p>它原生读写 DXF（R12 到 2018，ASCII 和二进制），DWG 通过 acadrust 读写（R13 到 2018）。图层、标注样式、填充、块、布局和视口、PLOT 出 PDF 都有，参数化约束这些进阶功能也在补。</p><p>官方标的是 early development：CADCraft 没有建模的实体，保存时会直接丢掉；SHX 字体不读，中文要靠系统字体回退。适合画平面图、改 DXF、出简单图纸，不适合当唯一的生产工具。</p>
 
   <div class="cols">
-    <div class="col good"><h3>值得装的地方</h3><ul><li>上线 23 天拿到 7,261 星</li><li>开源，可自行检查代码与许可证</li></ul></div>
-    <div class="col bad"><h3>它做不到的</h3><ul><li>本站还没实测</li><li>能不能替你，要看你的具体流程</li></ul></div>
+    <div class="col good"><h3>值得装的地方</h3><ul><li>命令行、对象捕捉、极轴、直接距离输入，习惯接近 AutoCAD</li><li>DXF R12–2018 读写，DWG R13–2018 可开可存</li><li>布局、视口、PLOT 出 PDF，SVG/PNG 导出</li><li>macOS / Windows / Linux / FreeBSD / 网页都能跑</li></ul></div>
+    <div class="col bad"><h3>它做不到的</h3><ul><li>官方标 early development，功能还在快速补</li><li>没建模的实体保存时会直接丢掉</li><li>SHX 字体不读，中文依赖系统字体回退</li></ul></div>
   </div>
 
   <h2>项目与下载</h2>
@@ -51,7 +51,7 @@
   </div>
 
   <h2>接着看</h2>
-  <div class="links"><a href="/tools/aerial-tv">aerial-tv<span>电视广告 / 预装应用</span></a><a href="/tools/wordcraft">wordcraft<span>Microsoft Word</span></a><a href="/tools/gridcraft">gridcraft<span>Microsoft Excel</span></a></div>
+  <div class="links"><a href="/tools/aerial-tv">aerial-tv<span>电视广告 / 预装应用</span></a><a href="/tools/wordcraft">WordCraft<span>Microsoft Word</span></a><a href="/tools/gridcraft">GridCraft<span>Microsoft Excel</span></a></div>
 </main>
 <footer>
   <div class="wrap">
