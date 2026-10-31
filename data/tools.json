@@ -32,7 +32,7 @@
   },
   {
     "slug": "wordcraft",
-    "name": "wordcraft",
+    "name": "WordCraft",
     "repo": "storytold/wordcraft",
     "homepage": "https://getartcraft.com/apps/wordcraft",
     "download": "https://github.com/storytold/wordcraft/releases/tag/v0.12.0",
@@ -47,23 +47,26 @@
     "stars": 16755,
     "growth": 728,
     "trend": "up",
-    "summary": "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
-    "verdict": "刚冒头，还没实测：先看它替什么、去哪里下，实测结论随后补。",
+    "summary": "纯 Rust 写的开源文字处理器，界面照 Word 的 Ribbon 做，原生读写 .docx，也能打开 .doc、.odt、.rtf、.md。",
+    "verdict": "写稿、排版、批注、目录、邮件合并都能做；官方自评约六成可用于真实工作，复杂图表和原生打印还没补齐。",
     "pros": [
-      "上线 23 天拿到 16,755 星",
-      "开源，可自行检查代码与许可证"
+      "原生读写 .docx，能打开 Word 97-2003 的 .doc",
+      "Ribbon、样式、修订、批注、目录、脚注、邮件合并都有",
+      "macOS / Windows / Linux / BSD / 网页都能跑",
+      "MIT 或 Apache-2.0，拼写和语法检查离线完成"
     ],
     "cons": [
-      "本站还没实测",
-      "能不能替你，要看你的具体流程"
+      "alpha 阶段，官方自评约 60% 可用于真实工作",
+      "图表和 SmartArt 往返会丢",
+      "分页精度和原生打印还没完成"
     ],
-    "review": "自动收录：项目 23 天前上线，目前 16,755 星，许可证 Apache-2.0。官方定位是「An open-source, clean-room reimplementation of Microsoft Word in pure Rust」。下载链接指向官方 release；实测结论会在后续更新里补。",
+    "review": "WordCraft 是 ArtCraft 团队用纯 Rust 写的开源文字处理器，目标是复刻 Word 的操作习惯：Ribbon 选项卡、样式库、标尺、导航窗格都在原来的位置，Ctrl+B、F4、F7 这些快捷键也沿用。\n\n它原生读写 .docx（OOXML），也能打开 97-2003 的 .doc，导入 .odt、.rtf、.html、.md、.tex、.txt，导出 PDF 时文字可选中、链接和书签保留。修订、批注、目录、脚注、APA/MLA/Chicago/IEEE 引用、邮件合并、表格公式这些 Word 的重活都有对应功能。\n\n官方在 ROADMAP 里给的自评是：功能目录覆盖 97%，但按深度、文件保真度和稳定性加权，约 60% 可用于真实工作。图表和 SmartArt 往返会丢，分页精度和原生打印还没完成，这是它现在还不能完全替掉 Word 的地方。",
     "auto": true,
     "added": "2026-10-31"
   },
   {
     "slug": "cadcraft",
-    "name": "cadcraft",
+    "name": "CADCraft",
     "repo": "storytold/cadcraft",
     "homepage": "https://github.com/storytold/cadcraft",
     "download": "https://github.com/storytold/cadcraft/releases/tag/v0.14.0",
@@ -78,23 +81,26 @@
     "stars": 7261,
     "growth": 315,
     "trend": "up",
-    "summary": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
-    "verdict": "刚冒头，还没实测：先看它替什么、去哪里下，实测结论随后补。",
+    "summary": "纯 Rust 写的开源 2D/3D CAD，命令行、对象捕捉、图层、标注、填充、块和 DXF 都按 AutoCAD 的习惯来。",
+    "verdict": "画平面图、改 DXF、出 PDF 够用；早期开发阶段，DWG 只写到 R2000，没建模的实体会丢。",
     "pros": [
-      "上线 23 天拿到 7,261 星",
-      "开源，可自行检查代码与许可证"
+      "命令行、对象捕捉、极轴、直接距离输入，习惯接近 AutoCAD",
+      "DXF R12–2018 读写，DWG R13–2018 可开可存",
+      "布局、视口、PLOT 出 PDF，SVG/PNG 导出",
+      "macOS / Windows / Linux / FreeBSD / 网页都能跑"
     ],
     "cons": [
-      "本站还没实测",
-      "能不能替你，要看你的具体流程"
+      "官方标 early development，功能还在快速补",
+      "没建模的实体保存时会直接丢掉",
+      "SHX 字体不读，中文依赖系统字体回退"
     ],
-    "review": "自动收录：项目 23 天前上线，目前 7,261 星，许可证 Apache-2.0。官方定位是「CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust」。下载链接指向官方 release；实测结论会在后续更新里补。",
+    "review": "CADCraft 把 AutoCAD 的命令行工作流搬了过来：输入 L、点两个点、输入 @5<45，回车；对象捕捉、极轴、正交、直接距离输入、夹点、右键重复都和原来一样。\n\n它原生读写 DXF（R12 到 2018，ASCII 和二进制），DWG 通过 acadrust 读写（R13 到 2018）。图层、标注样式、填充、块、布局和视口、PLOT 出 PDF 都有，参数化约束这些进阶功能也在补。\n\n官方标的是 early development：CADCraft 没有建模的实体，保存时会直接丢掉；SHX 字体不读，中文要靠系统字体回退。适合画平面图、改 DXF、出简单图纸，不适合当唯一的生产工具。",
     "auto": true,
     "added": "2026-10-31"
   },
   {
     "slug": "gridcraft",
-    "name": "gridcraft",
+    "name": "GridCraft",
     "repo": "storytold/gridcraft",
     "homepage": "https://github.com/storytold/gridcraft",
     "download": "https://github.com/storytold/gridcraft/releases/tag/v0.13.0",
@@ -109,17 +115,20 @@
     "stars": 6890,
     "growth": 299,
     "trend": "up",
-    "summary": "GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust.",
-    "verdict": "刚冒头，还没实测：先看它替什么、去哪里下，实测结论随后补。",
+    "summary": "纯 Rust 写的开源电子表格，Ribbon、公式栏、透视表、图表、条件格式都按 Excel 的习惯做，原生读写 XLSX。",
+    "verdict": "日常表格、公式、透视表、图表能替；官方自评约五成可用，超大工作簿和多线程重算还没到位。",
     "pros": [
-      "上线 23 天拿到 6,890 星",
-      "开源，可自行检查代码与许可证"
+      "XLSX 原生读写，样式、公式、图表、透视表能往返",
+      "500+ 函数，支持动态数组、LET / LAMBDA",
+      "透视表、17 种图表、条件格式、打印预览",
+      "桌面 + 网页，无订阅、无遥测"
     ],
     "cons": [
-      "本站还没实测",
-      "能不能替你，要看你的具体流程"
+      "alpha 阶段，官方自评约 50% 可用于真实工作",
+      "超大工作簿、多线程重算还没做",
+      "旧 .xls 只导入值和公式，格式和对象会丢"
     ],
-    "review": "自动收录：项目 23 天前上线，目前 6,890 星，许可证 Apache-2.0。官方定位是「GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust.」。下载链接指向官方 release；实测结论会在后续更新里补。",
+    "review": "GridCraft 的操作方式和 Excel 几乎一样：Ribbon、公式栏、名称框、工作表标签、填充柄、格式刷、选择性粘贴、条件格式、表格、图表都在熟悉的位置。\n\nXLSX 是它的原生格式，样式、主题、公式（含动态数组）、表格、条件格式、数据验证、批注、超链接、图表、图片、迷你图、透视表和打印设置都能往返。公式引擎有 500 多个函数，支持 LET、LAMBDA、MAP、REDUCE、SCAN、BYROW、BYCOL、MAKEARRAY 和结构化引用。\n\n官方自评约 50% 可用于真实工作：超大工作簿、多线程重算、图表深度和旧 .xls 的格式还原都还没做完。日常记账、做报表、跑透视表够用，重活还得回 Excel。",
     "auto": true,
     "added": "2026-10-31"
   },
