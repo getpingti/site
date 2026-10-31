@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getpingti.com/sitemap.xml
