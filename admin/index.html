@@ -180,7 +180,7 @@
   }
 
   function fillHome(){
-    const f = $('#homeForm');
+    const f = $('#homeForm').elements;
     const v = (k, d) => site[k] || d;
     f.title.value = v('title', '开源平替 · 每天 1–2 个走红的开源软件');
     f.description.value = v('description', '');
@@ -207,7 +207,7 @@
   }
 
   function fill(t){
-    const f = $('#form');
+    const f = $('#form').elements;
     f.name.value = t.name || '';
     f.slug.value = t.slug || '';
     f.category.value = t.category || '';
@@ -227,13 +227,13 @@
     f.trend.value = t.trend || 'up';
     f.added.value = t.added || new Date().toISOString().slice(0,10);
     $('#empty').hidden = true;
-    f.hidden = false;
+    $('#form').hidden = false;
   }
 
   function select(i){ idx = i; renderList(); fill(tools[i]); $('#status').textContent = ''; }
 
   function collect(){
-    const f = $('#form');
+    const f = $('#form').elements;
     const t = tools[idx];
     t.name = f.name.value.trim();
     t.slug = f.slug.value.trim();
@@ -300,7 +300,7 @@
 
   $('#homeForm').onsubmit = async (e) => {
     e.preventDefault();
-    const f = $('#homeForm');
+    const f = $('#homeForm').elements;
     const payload = {};
     ['title','description','hero_line1','hero_line2','hero_note','list_heading','list_note','footer_note'].forEach(k => {
       payload[k] = f[k].value.trim();
