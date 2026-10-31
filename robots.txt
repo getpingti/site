@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://getpingti.com/sitemap.xml
+
+# build: 2026-10-31T11:45+08:00
