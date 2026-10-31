@@ -6,14 +6,46 @@ from __future__ import annotations
 import html
 import json
 import os
+import re
 import shutil
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "tools.json")
+SITE_JSON = os.path.join(ROOT, "data", "site.json")
 SITE = ROOT
 TOOLS_DIR = os.path.join(SITE, "tools")
 DOMAIN = "https://getpingti.com"
+
+DEFAULTS = {
+    "title": "开源平替 · 每天 1–2 个走红的开源软件",
+    "description": "每天收录 1–2 个 GitHub 上星标快速上涨的开源软件，分析它们能替代哪些付费软件，附项目地址与下载链接。",
+    "hero_line1": "每天 1–2 个突然走红的开源软件，",
+    "hero_line2": "替掉你正在付费的那个",
+    "hero_note": "每天从 GitHub 新冒头的项目里挑 1–2 个，只收能对应到具体收费软件的小工具。每个都写清楚：**能替多少、哪里不行、去哪里下**。",
+    "list_heading": "最新收录",
+    "list_note": "每天新增 1–2 个",
+    "footer_note": "只收录能真正替代付费软件的开源项目；链接指向官方仓库，不接软文。",
+}
+
+
+def load_cfg() -> dict:
+    cfg = dict(DEFAULTS)
+    if os.path.isfile(SITE_JSON):
+        try:
+            with open(SITE_JSON, encoding="utf-8") as fh:
+                cfg.update({k: v for k, v in json.load(fh).items() if isinstance(v, str) and v.strip()})
+        except Exception:
+            pass
+    return cfg
+
+
+CFG = load_cfg()
+
+
+def note_html(text: str) -> str:
+    out = e(text)
+    return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out)
 
 e = html.escape
 
@@ -90,7 +122,7 @@ def page(title: str, desc: str, body: str, canonical: str, extra_js: str = "") -
     <span>© {date.today().year} 开源平替</span>
     <a href="/about">关于</a>
     <a href="https://github.com/getpingti/pingti-templates" rel="noopener">模板仓库</a>
-    <span>只收录能真正替代付费软件的开源项目；链接指向官方仓库，不接软文。</span>
+    <span>{e(CFG['footer_note'])}</span>
   </div>
 </footer>
 <script src="/assets/app.js"></script>
@@ -111,8 +143,8 @@ def build_index(tools: list[dict]) -> str:
     body = f"""<main>
   <section class="hero">
     <div class="wrap">
-      <h1>每天 1–2 个突然走红的开源软件，<br>替掉你正在付费的那个</h1>
-      <p>每天从 GitHub 新冒头的项目里挑 1–2 个，只收能对应到具体收费软件的小工具。每个都写清楚：<strong>能替多少、哪里不行、去哪里下</strong>。</p>
+      <h1>{e(CFG['hero_line1'])}<br>{e(CFG['hero_line2'])}</h1>
+      <p>{note_html(CFG['hero_note'])}</p>
       <div class="stats">
         <div class="stat"><b>1–2</b><span>每天更新</span></div>
         <div class="stat"><b>{len(tools)}</b><span>累计收录</span></div>
@@ -124,8 +156,8 @@ def build_index(tools: list[dict]) -> str:
 
   <section class="wrap" id="list">
     <div class="list-head">
-      <h2>最新收录</h2>
-      <span>每天新增 1–2 个 · 更新于 {date.today().isoformat()}</span>
+      <h2>{e(CFG['list_heading'])}</h2>
+      <span>{e(CFG['list_note'])} · 更新于 {date.today().isoformat()}</span>
     </div>
     <div class="toolbar">
       <div class="chips">{chips}</div>
@@ -138,8 +170,8 @@ def build_index(tools: list[dict]) -> str:
   </section>
 </main>"""
     return page(
-        "开源平替 · 每天 1–2 个走红的开源软件",
-        "每天收录 1–2 个 GitHub 上星标快速上涨的开源软件，分析它们能替代哪些付费软件，附项目地址与下载链接。",
+        CFG["title"],
+        CFG["description"],
         body,
         "/",
     )
