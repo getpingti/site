@@ -11,6 +11,9 @@
   header{background:#fff;border-bottom:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;gap:16px}
   header b{color:var(--brand);font-size:18px}
   header a{color:var(--muted);font-size:13px;margin-left:auto;text-decoration:none}
+  .tabs{display:flex;gap:4px;margin-left:8px}
+  .tab{background:transparent;color:var(--muted);padding:7px 12px;border-radius:7px;font-weight:600}
+  .tab.on{background:#eef4fb;color:var(--brand)}
   .wrap{max-width:1180px;margin:0 auto;padding:20px}
   .login{max-width:360px;margin:12vh auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px}
   .login h1{margin:0 0 6px;font-size:22px;color:var(--brand)}
@@ -40,6 +43,10 @@
 <body>
 <header>
   <b>开源平替 · 后台</b>
+  <nav class="tabs">
+    <button type="button" class="tab on" data-view="tools">工具</button>
+    <button type="button" class="tab" data-view="home">首页</button>
+  </nav>
   <a href="/" target="_blank">查看网站</a>
   <a href="#" id="logout" hidden>退出</a>
 </header>
@@ -106,10 +113,42 @@
   </div>
 </div>
 
+<div id="homeView" class="wrap" hidden>
+  <main class="panel">
+    <form id="homeForm">
+      <h2 style="margin:0 0 4px;font-size:19px;color:var(--brand)">首页内容</h2>
+      <p style="margin:0 0 16px;color:var(--muted);font-size:13px">改完点保存，Cloudflare 约 1–2 分钟后上线。</p>
+
+      <div class="row">
+        <div class="field"><label>浏览器标题</label><input name="title"></div>
+        <div class="field"><label>搜索描述（meta description）</label><input name="description"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>主标题第一行</label><input name="hero_line1"></div>
+        <div class="field"><label>主标题第二行</label><input name="hero_line2"></div>
+      </div>
+      <div class="field">
+        <label>首屏说明（可以用 **文字** 加粗）</label>
+        <textarea name="hero_note" style="min-height:80px"></textarea>
+      </div>
+      <div class="row">
+        <div class="field"><label>列表标题</label><input name="list_heading"></div>
+        <div class="field"><label>列表说明</label><input name="list_note"></div>
+      </div>
+      <div class="field"><label>页脚说明</label><input name="footer_note"></div>
+
+      <div class="actions">
+        <button type="submit">保存并发布</button>
+        <span class="status" id="homeStatus"></span>
+      </div>
+    </form>
+  </main>
+</div>
+
 <script>
 (function(){
   const $ = (s) => document.querySelector(s);
-  let tools = [], idx = -1;
+  let tools = [], idx = -1, site = {};
 
   async function api(path, opts){
     const res = await fetch(path, Object.assign({credentials:'same-origin'}, opts));
@@ -124,11 +163,33 @@
 
   async function load(){
     try {
-      const data = await api('/api/tools');
-      tools = data.tools || [];
+      const [tdata, sdata] = await Promise.all([api('/api/tools'), api('/api/site')]);
+      tools = tdata.tools || [];
+      site = sdata.site || {};
       showApp();
       renderList();
+      fillHome();
+      showView('tools');
     } catch(e) { if (e.message !== 'unauthorized') setLoginErr(e.message); }
+  }
+
+  function showView(name){
+    $('#appView').hidden = name !== 'tools';
+    $('#homeView').hidden = name !== 'home';
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.view === name));
+  }
+
+  function fillHome(){
+    const f = $('#homeForm');
+    const v = (k, d) => site[k] || d;
+    f.title.value = v('title', '开源平替 · 每天 1–2 个走红的开源软件');
+    f.description.value = v('description', '');
+    f.hero_line1.value = v('hero_line1', '每天 1–2 个突然走红的开源软件，');
+    f.hero_line2.value = v('hero_line2', '替掉你正在付费的那个');
+    f.hero_note.value = v('hero_note', '');
+    f.list_heading.value = v('list_heading', '最新收录');
+    f.list_note.value = v('list_note', '每天新增 1–2 个');
+    f.footer_note.value = v('footer_note', '');
   }
 
   function renderList(){
@@ -208,6 +269,10 @@
 
   $('#logout').onclick = async (e) => { e.preventDefault(); await fetch('/api/logout', {method:'POST'}); showLogin(); };
 
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.onclick = () => showView(tab.dataset.view);
+  });
+
   $('#filter').oninput = renderList;
 
   $('#addBtn').onclick = () => {
@@ -231,6 +296,22 @@
       renderList();
       setStatus('已保存，Cloudflare 约 1–2 分钟后上线。', 'ok');
     } catch(err) { setStatus('保存失败：' + err.message, 'bad'); }
+  };
+
+  $('#homeForm').onsubmit = async (e) => {
+    e.preventDefault();
+    const f = $('#homeForm');
+    const payload = {};
+    ['title','description','hero_line1','hero_line2','hero_note','list_heading','list_note','footer_note'].forEach(k => {
+      payload[k] = f[k].value.trim();
+    });
+    const s = $('#homeStatus');
+    s.textContent = '保存中…'; s.className = 'status';
+    try {
+      await api('/api/site', {method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify({site: payload})});
+      site = payload;
+      s.textContent = '已保存，Cloudflare 约 1–2 分钟后上线。'; s.className = 'status ok';
+    } catch(err) { s.textContent = '保存失败：' + err.message; s.className = 'status bad'; }
   };
 
   load();
