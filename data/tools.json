@@ -1,36 +1,35 @@
 [
   {
-    "slug": "photocraft",
-    "name": "PhotoCraft",
-    "repo": "storytold/photocraft",
-    "homepage": "https://getartcraft.com/apps/photocraft",
-    "download": "https://github.com/storytold/photocraft/releases/latest",
-    "license": "MIT / Apache-2.0",
+    "slug": "free-my-tv",
+    "name": "free-my-tv",
+    "repo": "simbasjungles/free-my-tv",
+    "homepage": "https://freemytv.io",
+    "download": "https://github.com/simbasjungles/free-my-tv/releases/tag/v1.3.0",
+    "license": "MIT",
     "platforms": [
-      "Windows",
-      "macOS",
-      "Linux"
+      "Android",
+      "Web"
     ],
     "replaces": [
-      "Adobe Photoshop"
+      "电视广告 / 预装应用"
     ],
-    "category": "图片",
-    "stars": 74524,
-    "growth": 2570,
+    "category": "电视",
+    "stars": 5596,
+    "growth": 466,
     "trend": "up",
-    "summary": "纯 Rust 写的开源修图软件，能打开和保存 PSD。",
-    "verdict": "日常修图能顶八成；AI、插件、印刷三块不行。",
+    "summary": "一款专为 Google TV、LG webOS 和三星 Tizen 设计的快速、无广告的主屏幕。",
+    "verdict": "定位是替代 电视广告 / 预装应用；具体能替多少，装上用一周再判断。",
     "pros": [
-      "原生应用，启动快",
-      "图层、蒙版、调整图层齐全",
-      "能读写 PSD"
+      "上线 12 天拿到 5,596 星",
+      "开源，可自行检查代码与许可证"
     ],
     "cons": [
-      "没有 AI 生成 / 消除",
-      "不兼容 PS 插件",
-      "还是 early alpha"
+      "能不能替你，要看你的具体流程",
+      "复杂文件和边角场景建议先小范围试"
     ],
-    "review": "用三天下来，最像 Photoshop 的是操作习惯：左边工具栏、右边图层和调整面板，快捷键也沿用 PS。日常调色、蒙版压暗、加字、导出这一套流程完全走得通。真正的短板在 AI 和生态：生成式填充、AI 扩图、插件全都没有，做商业印刷也接不住。适合当第二工具，不适合当唯一工具。"
+    "review": "项目 12 天前上线，目前 5,596 星，许可证 MIT。官方定位是「一款专为 Google TV、LG webOS 和三星 Tizen 设计的快速、无广告的主屏幕。」，Topics：android-tv、claude-code、google-tv、home-screen、launcher。下载链接指向官方 release，项目地址和官网在文末。",
+    "auto": true,
+    "added": "2026-11-01"
   },
   {
     "slug": "cleanyourtv",
@@ -67,153 +66,12 @@
     "review": "它利用安卓电视自带的 ADB 调试，把厂商的广告服务、内容推荐和遥测逐批禁用，再装一个 532KB 的启动器。整个过程不 root、不卸载，脚本会记录恢复信息。风险是真实存在的：顺序反了可能开不了机，固件更新会把禁用的包装回来。建议先用备用电视练手。"
   },
   {
-    "slug": "filee",
-    "name": "Filee",
-    "repo": "KnifeLemon/Filee",
-    "homepage": "https://filee.sh",
-    "download": "https://github.com/KnifeLemon/Filee/releases/latest",
-    "license": "MIT",
-    "platforms": [
-      "Windows",
-      "macOS",
-      "Linux"
-    ],
-    "replaces": [
-      "在线格式转换网站",
-      "Office 导出",
-      "格式工厂"
-    ],
-    "category": "办公",
-    "stars": 17021,
-    "growth": 550,
-    "trend": "up",
-    "summary": "263 种格式，离线批量转换，不用上传、不用装 Office。",
-    "verdict": "日常转换够用，批量很爽；复杂排版和加密文件别指望。",
-    "pros": [
-      "完全离线，文件不上传",
-      "支持 263 种格式",
-      "批量转换快"
-    ],
-    "cons": [
-      "没有 OCR",
-      "加密 PDF 打不开",
-      "复杂 docx 转 PDF 会跑版"
-    ],
-    "review": "20 张 HEIC 拖进去，选 JPG，不到一分钟转完，画质和方向都对。10 个 Word 批量转 PDF 也不用装 Office，但页眉位置会有轻微偏移，分栏、文本框这类复杂排版更明显。涉密文件、不想上传的场景，它比在线网站强一个量级。"
-  },
-  {
-    "slug": "localsend",
-    "name": "LocalSend",
-    "repo": "localsend/localsend",
-    "homepage": "https://localsend.org",
-    "download": "https://github.com/localsend/localsend/releases/latest",
-    "license": "开源（以仓库为准）",
-    "platforms": [
-      "Windows",
-      "macOS",
-      "Linux",
-      "Android",
-      "iOS"
-    ],
-    "replaces": [
-      "微信文件传输",
-      "AirDrop",
-      "数据线",
-      "网盘"
-    ],
-    "category": "传输",
-    "stars": 0,
-    "growth": 0,
-    "trend": "evergreen",
-    "summary": "同一个 Wi-Fi 下手机电脑互传文件，不压缩、不走服务器。",
-    "verdict": "局域网内最快最稳；跨网、远程传输它做不到。",
-    "pros": [
-      "原图传输，不压缩",
-      "不经过第三方服务器",
-      "跨平台"
-    ],
-    "cons": [
-      "必须同一局域网",
-      "AP 隔离 / VPN 会挡",
-      "没有自动更新"
-    ],
-    "review": "微信传图会压，它不会。20 张原图、1GB 素材文件夹，5GHz 下几十兆每秒。前提是两台设备在同一网络：路由器开了 AP 隔离、电脑开着 VPN、防火墙没放行 53317，都会导致互相看不见。跨网传输不在它范围内。"
-  },
-  {
-    "slug": "upscayl",
-    "name": "Upscayl",
-    "repo": "upscayl/upscayl",
-    "homepage": "https://upscayl.org",
-    "download": "https://github.com/upscayl/upscayl/releases/latest",
-    "license": "开源（以仓库为准）",
-    "platforms": [
-      "Windows",
-      "macOS",
-      "Linux"
-    ],
-    "replaces": [
-      "付费图片放大软件",
-      "在线放大网站"
-    ],
-    "category": "图片",
-    "stars": 0,
-    "growth": 0,
-    "trend": "evergreen",
-    "summary": "用 Real-ESRGAN 在本地把低分辨率图片放大 4 倍。",
-    "verdict": "低分辨率能救，失焦救不了；核显可能跑不动。",
-    "pros": [
-      "本地跑，不上传",
-      "批量处理",
-      "多个模型可选"
-    ],
-    "cons": [
-      "需要 Vulkan 独显",
-      "失焦/拖影救不了",
-      "小字会有伪影"
-    ],
-    "review": "它靠模型补细节，不是简单拉伸。清晰的 480p 老图放大后纹理明显改善，但失焦、手抖的照片放大还是糊——它只补分辨率，不补焦点。另一个硬门槛是显卡：核显和很多老卡直接报错。"
-  },
-  {
-    "slug": "handbrake",
-    "name": "HandBrake",
-    "repo": "HandBrake/HandBrake",
-    "homepage": "https://handbrake.fr",
-    "download": "https://github.com/HandBrake/HandBrake/releases/latest",
-    "license": "GPL",
-    "platforms": [
-      "Windows",
-      "macOS",
-      "Linux"
-    ],
-    "replaces": [
-      "付费转码软件",
-      "在线压缩网站"
-    ],
-    "category": "视频",
-    "stars": 0,
-    "growth": 0,
-    "trend": "evergreen",
-    "summary": "老牌开源转码工具，10GB 视频能压到 2GB。",
-    "verdict": "压缩很稳，参数要会设；它不是剪辑软件。",
-    "pros": [
-      "免费、跨平台",
-      "批量队列",
-      "参数可控"
-    ],
-    "cons": [
-      "不是剪辑软件",
-      "不能修复画质",
-      "很吃 CPU"
-    ],
-    "review": "HQ 1080p30 + RF 22 + MP4 + AAC 160 这一套能吃九成场景。10.2GB 压到 2.1GB，18 分钟，画质几乎看不出差别。但它只做转码：剪片头、加字幕、调色都做不了，糊的视频压完只会更糊。"
-  },
-  {
-    "slug": "gimp",
-    "name": "GIMP 3.2",
-    "repo": "GNOME/gimp",
-    "homepage": "https://www.gimp.org",
-    "download": "https://www.gimp.org/downloads/",
-    "license": "GPLv3",
+    "slug": "photocraft",
+    "name": "PhotoCraft",
+    "repo": "storytold/photocraft",
+    "homepage": "https://getartcraft.com/apps/photocraft",
+    "download": "https://github.com/storytold/photocraft/releases/latest",
+    "license": "MIT / Apache-2.0",
     "platforms": [
       "Windows",
       "macOS",
@@ -223,124 +81,55 @@
       "Adobe Photoshop"
     ],
     "category": "图片",
-    "stars": 0,
-    "growth": 0,
-    "trend": "evergreen",
-    "summary": "免费了 30 年的开源修图软件，3.2 补上了非破坏图层。",
-    "verdict": "日常修图能替代七成；印刷和 AI 仍不行。",
+    "stars": 74524,
+    "growth": 2570,
+    "trend": "up",
+    "summary": "纯 Rust 写的开源修图软件，能打开和保存 PSD。",
+    "verdict": "日常修图能顶八成；AI、插件、印刷三块不行。",
     "pros": [
-      "3.2 支持链接图层、矢量图层",
-      "插件和脚本生态",
-      "完全免费"
+      "原生应用，启动快",
+      "图层、蒙版、调整图层齐全",
+      "能读写 PSD"
     ],
     "cons": [
-      "没有 AI 生成",
-      "CMYK 印刷弱",
-      "界面习惯和 PS 不同"
+      "没有 AI 生成 / 消除",
+      "不兼容 PS 插件",
+      "还是 early alpha"
     ],
-    "review": "3.2 最大的变化是非破坏图层：文字、矢量、链接图层都能回头改，不用再怕画一笔就变像素。修图流程和 PS 基本一致。但 AI 功能、PS 插件、原生 CMYK 这三块仍然缺，做商业印刷还是得用 PS 或 Affinity。"
+    "review": "用三天下来，最像 Photoshop 的是操作习惯：左边工具栏、右边图层和调整面板，快捷键也沿用 PS。日常调色、蒙版压暗、加字、导出这一套流程完全走得通。真正的短板在 AI 和生态：生成式填充、AI 扩图、插件全都没有，做商业印刷也接不住。适合当第二工具，不适合当唯一工具。"
   },
   {
-    "slug": "affine",
-    "name": "AFFiNE",
-    "repo": "toeverything/AFFiNE",
-    "homepage": "https://affine.pro",
-    "download": "https://github.com/toeverything/AFFiNE/releases/latest",
-    "license": "开源（以仓库为准）",
+    "slug": "aerial-tv",
+    "name": "aerial-tv",
+    "repo": "pengchujin/aerial-tv",
+    "homepage": "https://aerial.qust.me",
+    "download": "https://github.com/pengchujin/aerial-tv/releases/tag/v1.74",
+    "license": "MIT",
     "platforms": [
-      "Windows",
-      "macOS",
-      "Linux",
-      "Web"
+      "Android"
     ],
     "replaces": [
-      "Notion",
-      "Miro"
+      "电视广告 / 预装应用"
     ],
-    "category": "办公",
-    "stars": 73952,
-    "growth": 0,
-    "trend": "evergreen",
-    "summary": "文档、白板、数据库三合一，local-first，可自建。",
-    "verdict": "个人和小团队够用；协作权限和生态还差一截。",
+    "category": "电视",
+    "stars": 8092,
+    "growth": 809,
+    "trend": "up",
+    "summary": "给国产电视的一块干净桌面：参照 tvOS 设计的开源 Android TV 桌面，没有广告，开机自动接管。",
+    "verdict": "给国产电视换一个无广告桌面，思路和 CleanYourTV 类似；能不能装、装完稳不稳，取决于电视型号和固件。",
     "pros": [
-      "一个页面三种视图",
-      "数据可自建",
-      "界面简洁"
+      "参照 tvOS 设计，界面干净",
+      "开源、无广告，可自行检查",
+      "面向小米、TCL 等国产 Android TV"
     ],
     "cons": [
-      "协作权限弱",
-      "模板和集成少",
-      "移动端一般"
+      "只支持 Android TV，非安卓电视用不了",
+      "需要 ADB 安装，固件更新可能还原",
+      "不同品牌电视兼容性不一"
     ],
-    "review": "一个页面里能写文档、画白板、放数据库，这是 Notion 做不到的。local-first 和自建对数据敏感的人很友好。短板在协作：权限、评论、团队空间都不如 Notion 成熟，从 Notion 迁移也会丢格式。"
-  },
-  {
-    "slug": "ventoy",
-    "name": "Ventoy",
-    "repo": "ventoy/Ventoy",
-    "homepage": "https://www.ventoy.net",
-    "download": "https://github.com/ventoy/Ventoy/releases/latest",
-    "license": "GPLv3",
-    "platforms": [
-      "Windows",
-      "Linux"
-    ],
-    "replaces": [
-      "Rufus",
-      "官方写盘工具"
-    ],
-    "category": "系统",
-    "stars": 0,
-    "growth": 0,
-    "trend": "evergreen",
-    "summary": "一个 U 盘装多个系统镜像，不用反复格式化。",
-    "verdict": "装机、救电脑的神器；会清空 U 盘，老主板兼容性一般。",
-    "pros": [
-      "一个 U 盘放多个 ISO",
-      "拷进去就能启动",
-      "支持 Secure Boot"
-    ],
-    "cons": [
-      "安装会清空 U 盘",
-      "老主板可能不认",
-      "不是备份工具"
-    ],
-    "review": "传统做法是一个系统写一次盘；Ventoy 把 U 盘做成启动器，ISO 像普通文件一样拷进去。想加系统就拷，想删就删。注意安装会格式化 U 盘，重要数据先备份；十年以上的老电脑可能识别不了。"
-  },
-  {
-    "slug": "obs",
-    "name": "OBS Studio",
-    "repo": "obsproject/obs-studio",
-    "homepage": "https://obsproject.com",
-    "download": "https://github.com/obsproject/obs-studio/releases/latest",
-    "license": "GPL",
-    "platforms": [
-      "Windows",
-      "macOS",
-      "Linux"
-    ],
-    "replaces": [
-      "付费录屏软件",
-      "直播推流软件"
-    ],
-    "category": "视频",
-    "stars": 0,
-    "growth": 0,
-    "trend": "evergreen",
-    "summary": "免费开源的录屏与直播工具，参数调对就很清晰。",
-    "verdict": "录屏直播够用；默认设置会糊，它不是剪辑软件。",
-    "pros": [
-      "免费、无水印、不限时",
-      "多场景、多来源",
-      "可推流"
-    ],
-    "cons": [
-      "默认参数会糊",
-      "不是剪辑软件",
-      "吃 CPU/显卡"
-    ],
-    "review": "默认设置录出来字是糊的，问题在码率和分辨率。CQP 18–20 或 CBR 8000–12000、1080p、30/60fps 调完就清楚。它只负责录和推，剪片、加字幕还得进剪映。"
+    "review": "aerial-tv 是给国产电视做的开源桌面，参照 tvOS 的布局：大图卡片、横向排列的应用，没有厂商推荐位和开机广告。项目 10 天前上线，目前 8,000 多星，MIT 许可证。\n\n它面向小米、TCL 等国内 Android TV，通过 ADB 安装后接管桌面。能不能装、装完是否稳定，取决于电视型号、系统版本和厂商限制；固件更新后有可能被还原。项目地址和下载在文末。",
+    "auto": true,
+    "added": "2026-10-31"
   },
   {
     "slug": "wordcraft",
@@ -377,37 +166,39 @@
     "added": "2026-10-31"
   },
   {
-    "slug": "aerial-tv",
-    "name": "aerial-tv",
-    "repo": "pengchujin/aerial-tv",
-    "homepage": "https://aerial.qust.me",
-    "download": "https://github.com/pengchujin/aerial-tv/releases/tag/v1.74",
+    "slug": "filee",
+    "name": "Filee",
+    "repo": "KnifeLemon/Filee",
+    "homepage": "https://filee.sh",
+    "download": "https://github.com/KnifeLemon/Filee/releases/latest",
     "license": "MIT",
     "platforms": [
-      "Android"
+      "Windows",
+      "macOS",
+      "Linux"
     ],
     "replaces": [
-      "电视广告 / 预装应用"
+      "在线格式转换网站",
+      "Office 导出",
+      "格式工厂"
     ],
-    "category": "电视",
-    "stars": 8092,
-    "growth": 809,
+    "category": "办公",
+    "stars": 17021,
+    "growth": 550,
     "trend": "up",
-    "summary": "给国产电视的一块干净桌面：参照 tvOS 设计的开源 Android TV 桌面，没有广告，开机自动接管。",
-    "verdict": "给国产电视换一个无广告桌面，思路和 CleanYourTV 类似；能不能装、装完稳不稳，取决于电视型号和固件。",
+    "summary": "263 种格式，离线批量转换，不用上传、不用装 Office。",
+    "verdict": "日常转换够用，批量很爽；复杂排版和加密文件别指望。",
     "pros": [
-      "参照 tvOS 设计，界面干净",
-      "开源、无广告，可自行检查",
-      "面向小米、TCL 等国产 Android TV"
+      "完全离线，文件不上传",
+      "支持 263 种格式",
+      "批量转换快"
     ],
     "cons": [
-      "只支持 Android TV，非安卓电视用不了",
-      "需要 ADB 安装，固件更新可能还原",
-      "不同品牌电视兼容性不一"
+      "没有 OCR",
+      "加密 PDF 打不开",
+      "复杂 docx 转 PDF 会跑版"
     ],
-    "review": "aerial-tv 是给国产电视做的开源桌面，参照 tvOS 的布局：大图卡片、横向排列的应用，没有厂商推荐位和开机广告。项目 10 天前上线，目前 8,000 多星，MIT 许可证。\n\n它面向小米、TCL 等国内 Android TV，通过 ADB 安装后接管桌面。能不能装、装完是否稳定，取决于电视型号、系统版本和厂商限制；固件更新后有可能被还原。项目地址和下载在文末。",
-    "auto": true,
-    "added": "2026-10-31"
+    "review": "20 张 HEIC 拖进去，选 JPG，不到一分钟转完，画质和方向都对。10 个 Word 批量转 PDF 也不用装 Office，但页眉位置会有轻微偏移，分栏、文本框这类复杂排版更明显。涉密文件、不想上传的场景，它比在线网站强一个量级。"
   },
   {
     "slug": "cadcraft",
@@ -476,5 +267,246 @@
     "review": "GridCraft 的操作方式和 Excel 几乎一样：Ribbon、公式栏、名称框、工作表标签、填充柄、格式刷、选择性粘贴、条件格式、表格、图表都在熟悉的位置。\n\nXLSX 是它的原生格式，样式、主题、公式（含动态数组）、表格、条件格式、数据验证、批注、超链接、图表、图片、迷你图、透视表和打印设置都能往返。公式引擎有 500 多个函数，支持 LET、LAMBDA、MAP、REDUCE、SCAN、BYROW、BYCOL、MAKEARRAY 和结构化引用。\n\n官方自评约 50% 可用于真实工作：超大工作簿、多线程重算、图表深度和旧 .xls 的格式还原都还没做完。日常记账、做报表、跑透视表够用，重活还得回 Excel。",
     "auto": true,
     "added": "2026-10-31"
+  },
+  {
+    "slug": "affine",
+    "name": "AFFiNE",
+    "repo": "toeverything/AFFiNE",
+    "homepage": "https://affine.pro",
+    "download": "https://github.com/toeverything/AFFiNE/releases/latest",
+    "license": "开源（以仓库为准）",
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "Web"
+    ],
+    "replaces": [
+      "Notion",
+      "Miro"
+    ],
+    "category": "办公",
+    "stars": 73952,
+    "growth": 0,
+    "trend": "evergreen",
+    "summary": "文档、白板、数据库三合一，local-first，可自建。",
+    "verdict": "个人和小团队够用；协作权限和生态还差一截。",
+    "pros": [
+      "一个页面三种视图",
+      "数据可自建",
+      "界面简洁"
+    ],
+    "cons": [
+      "协作权限弱",
+      "模板和集成少",
+      "移动端一般"
+    ],
+    "review": "一个页面里能写文档、画白板、放数据库，这是 Notion 做不到的。local-first 和自建对数据敏感的人很友好。短板在协作：权限、评论、团队空间都不如 Notion 成熟，从 Notion 迁移也会丢格式。"
+  },
+  {
+    "slug": "gimp",
+    "name": "GIMP 3.2",
+    "repo": "GNOME/gimp",
+    "homepage": "https://www.gimp.org",
+    "download": "https://www.gimp.org/downloads/",
+    "license": "GPLv3",
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "replaces": [
+      "Adobe Photoshop"
+    ],
+    "category": "图片",
+    "stars": 0,
+    "growth": 0,
+    "trend": "evergreen",
+    "summary": "免费了 30 年的开源修图软件，3.2 补上了非破坏图层。",
+    "verdict": "日常修图能替代七成；印刷和 AI 仍不行。",
+    "pros": [
+      "3.2 支持链接图层、矢量图层",
+      "插件和脚本生态",
+      "完全免费"
+    ],
+    "cons": [
+      "没有 AI 生成",
+      "CMYK 印刷弱",
+      "界面习惯和 PS 不同"
+    ],
+    "review": "3.2 最大的变化是非破坏图层：文字、矢量、链接图层都能回头改，不用再怕画一笔就变像素。修图流程和 PS 基本一致。但 AI 功能、PS 插件、原生 CMYK 这三块仍然缺，做商业印刷还是得用 PS 或 Affinity。"
+  },
+  {
+    "slug": "handbrake",
+    "name": "HandBrake",
+    "repo": "HandBrake/HandBrake",
+    "homepage": "https://handbrake.fr",
+    "download": "https://github.com/HandBrake/HandBrake/releases/latest",
+    "license": "GPL",
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "replaces": [
+      "付费转码软件",
+      "在线压缩网站"
+    ],
+    "category": "视频",
+    "stars": 0,
+    "growth": 0,
+    "trend": "evergreen",
+    "summary": "老牌开源转码工具，10GB 视频能压到 2GB。",
+    "verdict": "压缩很稳，参数要会设；它不是剪辑软件。",
+    "pros": [
+      "免费、跨平台",
+      "批量队列",
+      "参数可控"
+    ],
+    "cons": [
+      "不是剪辑软件",
+      "不能修复画质",
+      "很吃 CPU"
+    ],
+    "review": "HQ 1080p30 + RF 22 + MP4 + AAC 160 这一套能吃九成场景。10.2GB 压到 2.1GB，18 分钟，画质几乎看不出差别。但它只做转码：剪片头、加字幕、调色都做不了，糊的视频压完只会更糊。"
+  },
+  {
+    "slug": "localsend",
+    "name": "LocalSend",
+    "repo": "localsend/localsend",
+    "homepage": "https://localsend.org",
+    "download": "https://github.com/localsend/localsend/releases/latest",
+    "license": "开源（以仓库为准）",
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "Android",
+      "iOS"
+    ],
+    "replaces": [
+      "微信文件传输",
+      "AirDrop",
+      "数据线",
+      "网盘"
+    ],
+    "category": "传输",
+    "stars": 0,
+    "growth": 0,
+    "trend": "evergreen",
+    "summary": "同一个 Wi-Fi 下手机电脑互传文件，不压缩、不走服务器。",
+    "verdict": "局域网内最快最稳；跨网、远程传输它做不到。",
+    "pros": [
+      "原图传输，不压缩",
+      "不经过第三方服务器",
+      "跨平台"
+    ],
+    "cons": [
+      "必须同一局域网",
+      "AP 隔离 / VPN 会挡",
+      "没有自动更新"
+    ],
+    "review": "微信传图会压，它不会。20 张原图、1GB 素材文件夹，5GHz 下几十兆每秒。前提是两台设备在同一网络：路由器开了 AP 隔离、电脑开着 VPN、防火墙没放行 53317，都会导致互相看不见。跨网传输不在它范围内。"
+  },
+  {
+    "slug": "obs",
+    "name": "OBS Studio",
+    "repo": "obsproject/obs-studio",
+    "homepage": "https://obsproject.com",
+    "download": "https://github.com/obsproject/obs-studio/releases/latest",
+    "license": "GPL",
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "replaces": [
+      "付费录屏软件",
+      "直播推流软件"
+    ],
+    "category": "视频",
+    "stars": 0,
+    "growth": 0,
+    "trend": "evergreen",
+    "summary": "免费开源的录屏与直播工具，参数调对就很清晰。",
+    "verdict": "录屏直播够用；默认设置会糊，它不是剪辑软件。",
+    "pros": [
+      "免费、无水印、不限时",
+      "多场景、多来源",
+      "可推流"
+    ],
+    "cons": [
+      "默认参数会糊",
+      "不是剪辑软件",
+      "吃 CPU/显卡"
+    ],
+    "review": "默认设置录出来字是糊的，问题在码率和分辨率。CQP 18–20 或 CBR 8000–12000、1080p、30/60fps 调完就清楚。它只负责录和推，剪片、加字幕还得进剪映。"
+  },
+  {
+    "slug": "upscayl",
+    "name": "Upscayl",
+    "repo": "upscayl/upscayl",
+    "homepage": "https://upscayl.org",
+    "download": "https://github.com/upscayl/upscayl/releases/latest",
+    "license": "开源（以仓库为准）",
+    "platforms": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "replaces": [
+      "付费图片放大软件",
+      "在线放大网站"
+    ],
+    "category": "图片",
+    "stars": 0,
+    "growth": 0,
+    "trend": "evergreen",
+    "summary": "用 Real-ESRGAN 在本地把低分辨率图片放大 4 倍。",
+    "verdict": "低分辨率能救，失焦救不了；核显可能跑不动。",
+    "pros": [
+      "本地跑，不上传",
+      "批量处理",
+      "多个模型可选"
+    ],
+    "cons": [
+      "需要 Vulkan 独显",
+      "失焦/拖影救不了",
+      "小字会有伪影"
+    ],
+    "review": "它靠模型补细节，不是简单拉伸。清晰的 480p 老图放大后纹理明显改善，但失焦、手抖的照片放大还是糊——它只补分辨率，不补焦点。另一个硬门槛是显卡：核显和很多老卡直接报错。"
+  },
+  {
+    "slug": "ventoy",
+    "name": "Ventoy",
+    "repo": "ventoy/Ventoy",
+    "homepage": "https://www.ventoy.net",
+    "download": "https://github.com/ventoy/Ventoy/releases/latest",
+    "license": "GPLv3",
+    "platforms": [
+      "Windows",
+      "Linux"
+    ],
+    "replaces": [
+      "Rufus",
+      "官方写盘工具"
+    ],
+    "category": "系统",
+    "stars": 0,
+    "growth": 0,
+    "trend": "evergreen",
+    "summary": "一个 U 盘装多个系统镜像，不用反复格式化。",
+    "verdict": "装机、救电脑的神器；会清空 U 盘，老主板兼容性一般。",
+    "pros": [
+      "一个 U 盘放多个 ISO",
+      "拷进去就能启动",
+      "支持 Secure Boot"
+    ],
+    "cons": [
+      "安装会清空 U 盘",
+      "老主板可能不认",
+      "不是备份工具"
+    ],
+    "review": "传统做法是一个系统写一次盘；Ventoy 把 U 盘做成启动器，ISO 像普通文件一样拷进去。想加系统就拷，想删就删。注意安装会格式化 U 盘，重要数据先备份；十年以上的老电脑可能识别不了。"
   }
 ]
