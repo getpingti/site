@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concat 评测 · 替代 剪映专业版 / CapCut · 开源平替</title>
+<meta name="description" content="纯 Rust 写的开源视频剪辑器，对标剪映专业版：自动字幕、TTS、抠像、关键帧、4K 导出，无水印、无账号、全本地。 剪映的核心功能基本都有，而且不上传、不水印；beta 阶段，复杂工程和模板生态还差得远。">
+<link rel="canonical" href="https://getpingti.com/tools/concat">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="/">开源平替</a>
+    <nav class="nav">
+      <a href="/#list" aria-current="page">今日更新</a>
+      <a href="/about">关于</a>
+    </nav>
+    <div class="search">
+      <input id="q" type="search" placeholder="搜软件，或你想替掉的付费软件" autocomplete="off">
+      <kbd>/</kbd>
+    </div>
+  </div>
+</header>
+<main class="article">
+  <div class="crumb"><a href="/">开源平替</a> / 视频 / Concat</div>
+  <h1>Concat</h1>
+  <p class="lead">纯 Rust 写的开源视频剪辑器，对标剪映专业版：自动字幕、TTS、抠像、关键帧、4K 导出，无水印、无账号、全本地。</p>
+  <div class="meta"><span>视频</span><span>★ 13,419</span><span>本周 ↑ 197</span><span>AGPL-3.0</span><span>Windows</span><span>macOS</span><span>Linux</span><span>Android</span><span>iOS</span></div>
+
+  <div class="verdict-box">剪映的核心功能基本都有，而且不上传、不水印；beta 阶段，复杂工程和模板生态还差得远。</div>
+
+  <h2>它能替代什么</h2>
+  <ul><li>剪映专业版 / CapCut</li></ul>
+
+  <h2>实测</h2>
+  <p>Concat 是冲着剪映专业版去的开源剪辑器：自动字幕、文字转语音、抠像、关键帧、特效、多轨、4K 导出这些“打开剪映真正会用的功能”它都有，而且没有水印、不用登录、不上传素材，全部在本机跑。</p><p>它用 Rust 写引擎、GPU 做合成，官方说 4K 时间线能流畅预览；字幕走本地 Whisper，语音和抠像模型在设置里下载一次，之后离线可用。除了桌面端，还有 Android 和 iOS，项目文件跨平台通用。</p><p>官方自己标的是 beta：能用，但还有边角问题；Windows 安装包目前没有签名，SmartScreen 会拦，需要点“更多信息 → 仍要运行”。适合想摆脱剪映会员和上传的人，不适合依赖海量模板和插件接单的团队。</p>
+
+  <div class="cols">
+    <div class="col good"><h3>值得装的地方</h3><ul><li>无水印、无账号、无订阅，素材不上传</li><li>本地 Whisper 自动字幕，支持语音克隆和声音清理</li><li>多轨、关键帧、100+ 效果、4K60 导出</li><li>Windows / macOS / Linux / Android / iOS</li></ul></div>
+    <div class="col bad"><h3>它做不到的</h3><ul><li>beta 阶段，复杂工程可能崩</li><li>AI 模型首次使用要单独下载</li><li>模板和插件生态远不如剪映</li></ul></div>
+  </div>
+
+  <h2>项目与下载</h2>
+  <div class="links">
+    <a href="https://github.com/jub0t/Concat" rel="noopener">GitHub 仓库<span>jub0t/Concat</span></a>
+    <a href="https://concat.standalones.org" rel="noopener">官方网站<span>concat.standalones.org</span></a>
+    <a href="https://github.com/jub0t/Concat/releases/latest" rel="noopener">下载 / 安装包<span>官方发布页</span></a>
+  </div>
+
+  <h2>接着看</h2>
+  <div class="links"><a href="/tools/focalboard">focalboard<span>Notion</span></a><a href="/tools/minipaint">miniPaint<span>Adobe Photoshop</span></a><a href="/tools/cleanyourtv">CleanYourTV<span>电视开机广告</span></a></div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 开源平替</span>
+    <a href="/about">关于</a>
+    <a href="https://github.com/getpingti/pingti-templates" rel="noopener">模板仓库</a>
+    <span>只收录能真正替代付费软件的开源项目；链接指向官方仓库，不接软文。</span>
+  </div>
+</footer>
+<script src="/assets/app.js"></script>
+
+</body>
+</html>
