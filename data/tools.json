@@ -1,65 +1,34 @@
 [
   {
-    "slug": "focalboard",
-    "name": "focalboard",
-    "repo": "mattermost-community/focalboard",
-    "homepage": "https://www.focalboard.com",
-    "download": "https://github.com/mattermost-community/focalboard/releases/tag/v8.0.0",
-    "license": "见仓库",
+    "slug": "notionnext",
+    "name": "NotionNext",
+    "repo": "notionnext-org/NotionNext",
+    "homepage": "https://notionnext.tangly1024.com",
+    "download": "https://github.com/notionnext-org/NotionNext/releases/tag/v4.11.1",
+    "license": "MIT",
     "platforms": [
-      "见仓库"
+      "Web"
     ],
     "replaces": [
       "Notion"
     ],
     "category": "办公",
-    "stars": 26540,
+    "stars": 11900,
     "growth": 0,
     "trend": "evergreen",
-    "summary": "Focalboard 是一款开源、可自主托管的工具，可作为 Trello、Notion 和 Asana 的替代方案。",
+    "summary": "将您的 Notion 工作区转变为一个快速且可自定义的网站。",
     "verdict": "定位是替代 Notion；具体能替多少，装上用一周再判断。",
     "pros": [
-      "长期维护，26,540 星",
+      "长期维护，11,900 星",
       "开源，可自行检查代码与许可证"
     ],
     "cons": [
       "能不能替你，要看你的具体流程",
       "复杂文件和边角场景建议先小范围试"
     ],
-    "review": "项目持续维护，目前 26,540 星，许可证 见仓库。官方定位是「Focalboard 是一款开源、可自主托管的工具，可作为 Trello、Notion 和 Asana 的替代方案。」，Topics：asana、collaboration、goal-tracking、golang、hacktoberfest。下载链接指向官方 release，项目地址和官网在文末。",
+    "review": "项目持续维护，目前 11,900 星，许可证 MIT。官方定位是「将您的 Notion 工作区转变为一个快速且可自定义的网站。」，Topics：blog、nextjs、notion、react、tailwindcss。下载链接指向官方 release，项目地址和官网在文末。",
     "auto": true,
-    "added": "2026-11-03"
-  },
-  {
-    "slug": "novel",
-    "name": "novel",
-    "repo": "steven-tey/novel",
-    "homepage": "https://novel.sh",
-    "download": "https://github.com/steven-tey/novel/releases/tag/novel%401.0.2",
-    "license": "Apache-2.0",
-    "platforms": [
-      "见仓库"
-    ],
-    "replaces": [
-      "Notion"
-    ],
-    "category": "办公",
-    "stars": 16464,
-    "growth": 0,
-    "trend": "evergreen",
-    "summary": "一款具有 AI 驱动的自动补全功能的 Notion 风格所见即所得编辑器。",
-    "verdict": "定位是替代 Notion；具体能替多少，装上用一周再判断。",
-    "pros": [
-      "长期维护，16,464 星",
-      "开源，可自行检查代码与许可证"
-    ],
-    "cons": [
-      "能不能替你，要看你的具体流程",
-      "复杂文件和边角场景建议先小范围试"
-    ],
-    "review": "项目持续维护，目前 16,464 星，许可证 Apache-2.0。官方定位是「一款具有 AI 驱动的自动补全功能的 Notion 风格所见即所得编辑器。」，Topics：ai-sdk、chatgpt、nextjs、notion、openai。下载链接指向官方 release，项目地址和官网在文末。",
-    "auto": true,
-    "added": "2026-11-03"
+    "added": "2026-11-04"
   },
   {
     "slug": "cleanyourtv",
@@ -441,6 +410,37 @@
     "review": "一个页面里能写文档、画白板、放数据库，这是 Notion 做不到的。local-first 和自建对数据敏感的人很友好。短板在协作：权限、评论、团队空间都不如 Notion 成熟，从 Notion 迁移也会丢格式。"
   },
   {
+    "slug": "focalboard",
+    "name": "focalboard",
+    "repo": "mattermost-community/focalboard",
+    "homepage": "https://www.focalboard.com",
+    "download": "https://github.com/mattermost-community/focalboard/releases/tag/v8.0.0",
+    "license": "见仓库",
+    "platforms": [
+      "见仓库"
+    ],
+    "replaces": [
+      "Notion"
+    ],
+    "category": "办公",
+    "stars": 26540,
+    "growth": 0,
+    "trend": "evergreen",
+    "summary": "Focalboard 是一款开源、可自主托管的工具，可作为 Trello、Notion 和 Asana 的替代方案。",
+    "verdict": "定位是替代 Notion；具体能替多少，装上用一周再判断。",
+    "pros": [
+      "长期维护，26,540 星",
+      "开源，可自行检查代码与许可证"
+    ],
+    "cons": [
+      "能不能替你，要看你的具体流程",
+      "复杂文件和边角场景建议先小范围试"
+    ],
+    "review": "项目持续维护，目前 26,540 星，许可证 见仓库。官方定位是「Focalboard 是一款开源、可自主托管的工具，可作为 Trello、Notion 和 Asana 的替代方案。」，Topics：asana、collaboration、goal-tracking、golang、hacktoberfest。下载链接指向官方 release，项目地址和官网在文末。",
+    "auto": true,
+    "added": "2026-11-03"
+  },
+  {
     "slug": "docmost",
     "name": "Docmost",
     "repo": "docmost/docmost",
@@ -474,6 +474,37 @@
     ],
     "review": "Docmost 是一个开源的协作文档和知识库，定位很明确：替代 Notion 和 Confluence 的团队文档部分。空间、页面树、权限、评论、版本历史、实时协作这些团队真正会用的功能都有。\n\n它用 Docker 自建，数据放在自己的服务器上，适合对数据归属敏感的团队；也可以二次开发。界面比 Confluence 轻，上手成本低。\n\n短板在生态：模板、集成、插件远没有 Notion 多，移动端也一般。如果你只需要一个干净、可控的团队知识库，它够用；如果想要 All-in-one 的工作台，Notion 仍然更全。",
     "added": "2026-11-02"
+  },
+  {
+    "slug": "novel",
+    "name": "novel",
+    "repo": "steven-tey/novel",
+    "homepage": "https://novel.sh",
+    "download": "https://github.com/steven-tey/novel/releases/tag/novel%401.0.2",
+    "license": "Apache-2.0",
+    "platforms": [
+      "见仓库"
+    ],
+    "replaces": [
+      "Notion"
+    ],
+    "category": "办公",
+    "stars": 16464,
+    "growth": 0,
+    "trend": "evergreen",
+    "summary": "一款具有 AI 驱动的自动补全功能的 Notion 风格所见即所得编辑器。",
+    "verdict": "定位是替代 Notion；具体能替多少，装上用一周再判断。",
+    "pros": [
+      "长期维护，16,464 星",
+      "开源，可自行检查代码与许可证"
+    ],
+    "cons": [
+      "能不能替你，要看你的具体流程",
+      "复杂文件和边角场景建议先小范围试"
+    ],
+    "review": "项目持续维护，目前 16,464 星，许可证 Apache-2.0。官方定位是「一款具有 AI 驱动的自动补全功能的 Notion 风格所见即所得编辑器。」，Topics：ai-sdk、chatgpt、nextjs、notion、openai。下载链接指向官方 release，项目地址和官网在文末。",
+    "auto": true,
+    "added": "2026-11-03"
   },
   {
     "slug": "minipaint",
