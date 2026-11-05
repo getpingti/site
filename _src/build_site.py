@@ -134,7 +134,7 @@ def page(title: str, desc: str, body: str, canonical: str, extra_js: str = "") -
     </span>
   </div>
 </footer>
-<script src="/assets/app.js"></script>
+<script src="/assets/app.js?v=20261105b"></script>
 {extra_js}
 </body>
 </html>
