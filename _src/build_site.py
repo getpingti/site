@@ -154,11 +154,6 @@ def build_index(tools: list[dict]) -> str:
       <span class="eyebrow">每日更新 · 开源软件平替图鉴</span>
       <h1>{e(CFG['hero_line1'])}<br><span class="hl">{e(CFG['hero_line2'])}</span></h1>
       <p>{note_html(CFG['hero_note'])}</p>
-      <div class="stats">
-        <div class="stat"><b>1–2</b><span>每天更新</span></div>
-        <div class="stat"><b>{len(tools)}</b><span>累计收录</span></div>
-        <div class="stat"><b>0</b><span>广告 / 软文</span></div>
-      </div>
     </div>
   </section>
 
