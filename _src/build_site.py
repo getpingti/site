@@ -54,36 +54,41 @@ def n(value: int) -> str:
     return f"{value:,}"
 
 
-def badge(tool: dict) -> str:
-    growth = ""
+def trend_badge(tool: dict) -> str:
     if tool["trend"] == "up" and tool["growth"]:
-        growth = f'<span class="badge up">↑ {n(tool["growth"])} / 天</span>'
-    elif tool["trend"] == "evergreen":
-        growth = '<span class="badge ever">长青工具</span>'
-    if tool.get("added") == date.today().isoformat():
-        growth += '<span class="badge new">今日新增</span>'
-    return growth
+        return f'<span class="badge up">↑ {n(tool["growth"])} / 天</span>'
+    if tool["trend"] == "evergreen":
+        return '<span class="badge ever">长青工具</span>'
+    return ""
 
 
 def card(tool: dict, rank: int) -> str:
     replaces = "".join(
         f'<span class="badge replace">替代 {e(r)}</span>' for r in tool["replaces"][:2]
     )
+    new = '<span class="badge new">今日新增</span>' if tool.get("added") == date.today().isoformat() else ""
     stars = f'<span class="stars">{n(tool["stars"])}</span>' if tool["stars"] else ""
     text = " ".join(
         [tool["name"], tool["repo"], tool["category"], tool["summary"], tool["verdict"]]
         + tool["replaces"]
     )
     return f"""      <article class="card" data-slug="{e(tool['slug'])}" data-cat="{e(tool['category'])}" data-text="{e(text)}">
-        <div class="card-top">
+        <div class="card-head">
           <span class="rank">{rank:02d}</span>
-          <h2><a href="/tools/{e(tool['slug'])}">{e(tool['name'])}</a></h2>
+          <div class="card-name">
+            <h2><a href="/tools/{e(tool['slug'])}">{e(tool['name'])}</a></h2>
+            <span class="repo">{e(tool['repo'])}</span>
+          </div>
+          <div class="score">
+            {stars}
+            {trend_badge(tool)}
+          </div>
         </div>
-        <div class="badges">{badge(tool)}{replaces}</div>
+        <div class="badges">{new}{replaces}</div>
         <p>{e(tool['summary'])}</p>
         <div class="verdict">{e(tool['verdict'])}</div>
         <div class="card-foot">
-          {stars}
+          <span class="cat">{e(tool['category'])}</span>
           <span>{e(tool['license'])}</span>
           <a class="go" href="/tools/{e(tool['slug'])}">看评测 →</a>
         </div>
@@ -98,6 +103,7 @@ def page(title: str, desc: str, body: str, canonical: str, extra_js: str = "") -
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
+<meta name="theme-color" content="#0a0f1e">
 <link rel="canonical" href="{DOMAIN}{canonical}">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/style.css">
@@ -105,7 +111,7 @@ def page(title: str, desc: str, body: str, canonical: str, extra_js: str = "") -
 <body>
 <header class="topbar">
   <div class="wrap">
-    <a class="logo" href="/">开源平替</a>
+    <a class="logo" href="/"><span class="logo-mark">替</span><span class="logo-text">开源平替</span></a>
     <nav class="nav">
       <a href="/#list" aria-current="page">今日更新</a>
       <a href="/about">关于</a>
@@ -119,10 +125,13 @@ def page(title: str, desc: str, body: str, canonical: str, extra_js: str = "") -
 {body}
 <footer>
   <div class="wrap">
-    <span>© {date.today().year} 开源平替</span>
-    <a href="/about">关于</a>
-    <a href="https://github.com/getpingti/pingti-templates" rel="noopener">模板仓库</a>
-    <span>{e(CFG['footer_note'])}</span>
+    <a class="logo foot-logo" href="/"><span class="logo-mark">替</span><span class="logo-text">开源平替</span></a>
+    <span class="foot-note">{e(CFG['footer_note'])}</span>
+    <span class="foot-links">
+      <a href="/about">关于</a>
+      <a href="https://github.com/getpingti/pingti-templates" rel="noopener">模板仓库</a>
+      <span>© {date.today().year} 开源平替</span>
+    </span>
   </div>
 </footer>
 <script src="/assets/app.js"></script>
@@ -143,7 +152,8 @@ def build_index(tools: list[dict]) -> str:
     body = f"""<main>
   <section class="hero">
     <div class="wrap">
-      <h1>{e(CFG['hero_line1'])}<br>{e(CFG['hero_line2'])}</h1>
+      <span class="eyebrow">每日更新 · 开源软件平替图鉴</span>
+      <h1>{e(CFG['hero_line1'])}<br><span class="hl">{e(CFG['hero_line2'])}</span></h1>
       <p>{note_html(CFG['hero_note'])}</p>
       <div class="stats">
         <div class="stat"><b>1–2</b><span>每天更新</span></div>
@@ -206,7 +216,7 @@ def build_tool(tool: dict, tools: list[dict]) -> str:
   <p class="lead">{e(tool['summary'])}</p>
   <div class="meta">{''.join(meta)}</div>
 
-  <div class="verdict-box">{e(tool['verdict'])}</div>
+  <div class="verdict-box"><span class="verdict-label">本站结论</span>{e(tool['verdict'])}</div>
 
   <h2>它能替代什么</h2>
   <ul>{replaces}</ul>
