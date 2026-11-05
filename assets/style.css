@@ -163,9 +163,9 @@ a:hover { text-decoration: underline; }
 .chip[aria-pressed="true"] { background: var(--ink-950); border-color: var(--ink-950); color: #fff; }
 .count { margin-left: auto; font-size: 13px; color: var(--faint); font-variant-numeric: tabular-nums; }
 
-/* ————— 卡片瀑布流（CSS 多列；卡片高度自然参差） —————
-   app.js 靠给 .card 设 hidden 过滤：display:none 的卡片不占列，
-   浏览器会自动重排各列，不留空白。 */
+/* ————— 卡片瀑布流 —————
+   默认 CSS 多列兜底（纵向填充）；app.js 启用 JS 分列后按横向顺序排，
+   见下方 .js-masonry。过滤靠给 .card 设 hidden：隐藏卡不占列位。 */
 .grid {
   columns: 3; column-gap: 22px;
   padding-bottom: 48px;
@@ -182,6 +182,13 @@ a:hover { text-decoration: underline; }
 .card:has(.badge.new) { border-top-color: var(--accent); }
 .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
 .card[hidden] { display: none; }
+
+/* ————— JS 分列模式（app.js 给 #grid 加 .js-masonry 后生效） —————
+   无 JS 时仍用上面的 CSS 多列兜底。 */
+.grid.js-masonry { columns: auto; display: flex; gap: 22px; align-items: flex-start; }
+.masonry-col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+.grid.js-masonry .card { margin: 0; }
+.empty { margin-bottom: 48px; }
 
 .card-head { display: flex; align-items: flex-start; gap: 12px; }
 .rank {

@@ -6,9 +6,58 @@
   var chips = Array.prototype.slice.call(document.querySelectorAll(".chip[data-cat]"));
   var countEl = document.getElementById("count");
   var emptyEl = document.getElementById("empty");
+  var grid = document.getElementById("grid");
   var state = { q: "", cat: "全部" };
 
   if (!cards.length) return;
+
+  /* JS 分列瀑布流：把可见卡片按顺序轮流分到各列，
+     阅读顺序变成横向（第一行从左到右是 1、2、3……），
+     不再像 CSS 多列那样先填满第一列。列数与 CSS 断点一致：>1100 三列、>860 两列、其余一列。 */
+  var colCount = 0;
+  var stash = document.createElement("div");
+  stash.style.display = "none";
+
+  function desiredCols() {
+    var w = window.innerWidth || document.documentElement.clientWidth;
+    return w > 1100 ? 3 : w > 860 ? 2 : 1;
+  }
+
+  function layout() {
+    if (!grid) return;
+    var n = desiredCols();
+    colCount = n;
+    grid.classList.add("js-masonry");
+    while (grid.firstChild) grid.removeChild(grid.firstChild);
+    var cols = [];
+    for (var i = 0; i < n; i++) {
+      var col = document.createElement("div");
+      col.className = "masonry-col";
+      grid.appendChild(col);
+      cols.push(col);
+    }
+    var vi = 0;
+    cards.forEach(function (card) {
+      if (card.hidden) {
+        stash.appendChild(card);
+      } else {
+        cols[vi % n].appendChild(card);
+        vi += 1;
+      }
+    });
+  }
+
+  if (grid && emptyEl && emptyEl.parentNode === grid) {
+    grid.parentNode.insertBefore(emptyEl, grid.nextSibling);
+  }
+
+  var resizeTimer = null;
+  window.addEventListener("resize", function () {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (grid && desiredCols() !== colCount) layout();
+    }, 150);
+  });
 
   function textOf(card) {
     return (card.dataset.text || "") + " " + card.textContent;
@@ -30,6 +79,7 @@
         : "共 " + shown + " 个";
     }
     if (emptyEl) emptyEl.hidden = shown !== 0;
+    layout();
     try {
       var url = new URL(window.location.href);
       if (q) url.searchParams.set("q", state.q.trim());
