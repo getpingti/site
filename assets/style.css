@@ -167,7 +167,7 @@ a:hover { text-decoration: underline; }
    app.js 靠给 .card 设 hidden 过滤：display:none 的卡片不占列，
    浏览器会自动重排各列，不留空白。 */
 .grid {
-  columns: 2; column-gap: 22px;
+  columns: 3; column-gap: 22px;
   padding-bottom: 48px;
 }
 .card {
@@ -323,6 +323,10 @@ footer a { color: #c3cad8; }
 footer a:hover { color: #fff; }
 
 /* ————— 响应式 ————— */
+@media (max-width: 1100px) {
+  .grid { columns: 2; }
+}
+
 @media (max-width: 860px) {
   .topbar .wrap { height: auto; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; }
   .search { width: 100%; margin-left: 0; order: 3; }
