@@ -264,8 +264,10 @@ def main():
     with open(DATA, encoding="utf-8") as fh:
         tools = json.load(fh)
     order = {"up": 0, "evergreen": 1}
-    today = date.today().isoformat()
-    tools.sort(key=lambda t: (t.get("added") != today, order.get(t["trend"], 2), -t["growth"], -t["stars"], t["name"]))
+    # 主排序：按收录日期倒序，新软件在上、老的在下（无 added 的最早一批排最后）；
+    # 同一天内再按趋势、涨幅、星标排。稳定排序分两步实现。
+    tools.sort(key=lambda t: (order.get(t["trend"], 2), -t["growth"], -t["stars"], t["name"]))
+    tools.sort(key=lambda t: t.get("added") or "", reverse=True)
 
     os.makedirs(TOOLS_DIR, exist_ok=True)
     for name in os.listdir(TOOLS_DIR):
