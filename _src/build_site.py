@@ -139,7 +139,6 @@ def build_index(tools: list[dict]) -> str:
         for c in cats
     )
     cards = "\n".join(card(t, i + 1) for i, t in enumerate(tools))
-    total_stars = sum(t["stars"] for t in tools)
     body = f"""<main>
   <section class="hero">
     <div class="wrap">
@@ -148,7 +147,6 @@ def build_index(tools: list[dict]) -> str:
       <div class="stats">
         <div class="stat"><b>1–2</b><span>每天更新</span></div>
         <div class="stat"><b>{len(tools)}</b><span>累计收录</span></div>
-        <div class="stat"><b>{n(total_stars)}</b><span>项目总星标</span></div>
         <div class="stat"><b>0</b><span>广告 / 软文</span></div>
       </div>
     </div>
