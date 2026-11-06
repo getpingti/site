@@ -15,7 +15,7 @@ DATA = os.path.join(ROOT, "data", "tools.json")
 SITE_JSON = os.path.join(ROOT, "data", "site.json")
 SITE = ROOT
 TOOLS_DIR = os.path.join(SITE, "tools")
-DOMAIN = "https://getpingti.com"
+DOMAIN = "https://software.getpingti.com"
 
 DEFAULTS = {
     "title": "开源平替 · 每天 1–2 个走红的开源软件",
