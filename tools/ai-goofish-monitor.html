@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>闲鱼智能监控系统 评测 · 替代 闲鱼监控付费工具 · 开源平替</title>
+<meta name="description" content="基于 Playwright 与 AI 的闲鱼实时监控工具，带完整 Web 管理界面，帮你第一时间发现心仪的二手商品。 能替掉付费的闲鱼监控工具；但要自备 AI 模型 Key、还要自己导出闲鱼登录态，门槛不低。">
+<meta name="theme-color" content="#0a0f1e">
+<link rel="canonical" href="https://getpingti.com/tools/ai-goofish-monitor">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="/"><span class="logo-mark">替</span><span class="logo-text">开源平替</span></a>
+    <nav class="nav">
+      <a href="/#list" aria-current="page">今日更新</a>
+      <a href="/about">关于</a>
+    </nav>
+    <div class="search">
+      <input id="q" type="search" placeholder="搜软件，或你想替掉的付费软件" autocomplete="off">
+      <kbd>/</kbd>
+    </div>
+  </div>
+</header>
+<main class="article">
+  <div class="crumb"><a href="/">开源平替</a> / 购物 / 闲鱼智能监控系统</div>
+  <h1>闲鱼智能监控系统</h1>
+  <p class="lead">基于 Playwright 与 AI 的闲鱼实时监控工具，带完整 Web 管理界面，帮你第一时间发现心仪的二手商品。</p>
+  <div class="meta"><span>购物</span><span>★ 17,929</span><span>本周 ↑ 240</span><span>MIT</span><span>Docker</span><span>Web</span></div>
+
+  <div class="verdict-box"><span class="verdict-label">本站结论</span>能替掉付费的闲鱼监控工具；但要自备 AI 模型 Key、还要自己导出闲鱼登录态，门槛不低。</div>
+
+  <h2>它能替代什么</h2>
+  <ul><li>闲鱼监控付费工具</li><li>闲鱼代抢监控服务</li></ul>
+
+  <h2>实测</h2>
+  <p>它只做一件很具体的事：盯着闲鱼。建一个监控任务，填关键词、价格区间、新发布范围和省市区，程序就用 Playwright 实时刷闲鱼，发现符合条件的商品后，用 AI 模型多模态分析商品图和描述，再通过 ntfy、企业微信、Bark、Telegram 或 Webhook 把结果第一时间推给你。任务、账号、AI 判断标准、运行日志和结果浏览都在一个 Web 管理界面里，Docker 一条命令就能跑起来，最新 release 是 10 月 9 日的 2.5 版。</p><p>付费的闲鱼监控工具卖的就是“抢先发现 + 自动筛选”，它把这两样都做到了，还多了 AI 这一层：不用自己写一堆关键词规则，用自然语言描述“想要什么样的东西”，后台会生成分析标准；多任务可以并发跑，各绑不同的账号和代理。</p><p>边界也很实在：AI 分析不是免费的，必须填自己的 OpenAI 兼容 API Key 和模型名，调用要花钱；登录态要靠 Chrome 扩展从浏览器里导出来粘贴，闲鱼风控随时可能让登录态失效；部署要 Docker 或 Python 3.10 + Node + Playwright 环境，不是一键双击就能用的软件。适合常在闲鱼蹲稀缺好价的人，不适合只想偶尔逛逛的用户。</p>
+
+  <div class="cols">
+    <div class="col good"><h3>值得装的地方</h3><ul><li>Web 可视化管理：任务、账号、运行日志、结果浏览都在浏览器里完成</li><li>AI 自然语言建任务，多模态模型深度分析商品，关键词、价格、区域都能筛</li><li>支持 ntfy、企业微信、Bark、Telegram、Webhook 等多渠道即时通知</li><li>Docker 一键部署，镜像内置 Chromium，不用在宿主机装浏览器</li></ul></div>
+    <div class="col bad"><h3>它做不到的</h3><ul><li>必须自备 OpenAI 兼容 API Key，AI 分析要自己花钱</li><li>要用 Chrome 扩展导出闲鱼登录态，存在被闲鱼风控的可能</li><li>要跑 Docker 或配 Python 环境，对纯小白不友好</li></ul></div>
+  </div>
+
+  <h2>项目与下载</h2>
+  <div class="links">
+    <a href="https://github.com/Usagi-org/ai-goofish-monitor" rel="noopener">GitHub 仓库<span>Usagi-org/ai-goofish-monitor</span></a>
+    <a href="https://github.com/Usagi-org/ai-goofish-monitor" rel="noopener">官方网站<span>github.com/Usagi-org/ai-goofish-monitor</span></a>
+    <a href="https://github.com/Usagi-org/ai-goofish-monitor/releases/latest" rel="noopener">下载 / 安装包<span>官方发布页</span></a>
+  </div>
+
+  <h2>接着看</h2>
+  <div class="links"><a href="/tools/ghostty">Ghostty<span>Warp</span></a><a href="/tools/disc-image-studio">Disc Image Studio<span>Nero Burning ROM</span></a><a href="/tools/notionnext">NotionNext<span>Notion</span></a></div>
+</main>
+<footer>
+  <div class="wrap">
+    <a class="logo foot-logo" href="/"><span class="logo-mark">替</span><span class="logo-text">开源平替</span></a>
+    <span class="foot-note">只收录能真正替代付费软件的开源项目；链接指向官方仓库。</span>
+    <span class="foot-links">
+      <a href="/about">关于</a>
+      <a href="https://github.com/getpingti/pingti-templates" rel="noopener">模板仓库</a>
+      <span>© 2026 开源平替</span>
+    </span>
+  </div>
+</footer>
+<script src="/assets/app.js?v=20261105b"></script>
+
+</body>
+</html>

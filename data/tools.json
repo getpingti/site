@@ -1,5 +1,40 @@
 [
   {
+    "slug": "ai-goofish-monitor",
+    "name": "闲鱼智能监控系统",
+    "repo": "Usagi-org/ai-goofish-monitor",
+    "homepage": "https://github.com/Usagi-org/ai-goofish-monitor",
+    "download": "https://github.com/Usagi-org/ai-goofish-monitor/releases/latest",
+    "license": "MIT",
+    "platforms": [
+      "Docker",
+      "Web"
+    ],
+    "replaces": [
+      "闲鱼监控付费工具",
+      "闲鱼代抢监控服务"
+    ],
+    "category": "购物",
+    "stars": 17929,
+    "growth": 240,
+    "trend": "up",
+    "summary": "基于 Playwright 与 AI 的闲鱼实时监控工具，带完整 Web 管理界面，帮你第一时间发现心仪的二手商品。",
+    "verdict": "能替掉付费的闲鱼监控工具；但要自备 AI 模型 Key、还要自己导出闲鱼登录态，门槛不低。",
+    "pros": [
+      "Web 可视化管理：任务、账号、运行日志、结果浏览都在浏览器里完成",
+      "AI 自然语言建任务，多模态模型深度分析商品，关键词、价格、区域都能筛",
+      "支持 ntfy、企业微信、Bark、Telegram、Webhook 等多渠道即时通知",
+      "Docker 一键部署，镜像内置 Chromium，不用在宿主机装浏览器"
+    ],
+    "cons": [
+      "必须自备 OpenAI 兼容 API Key，AI 分析要自己花钱",
+      "要用 Chrome 扩展导出闲鱼登录态，存在被闲鱼风控的可能",
+      "要跑 Docker 或配 Python 环境，对纯小白不友好"
+    ],
+    "review": "它只做一件很具体的事：盯着闲鱼。建一个监控任务，填关键词、价格区间、新发布范围和省市区，程序就用 Playwright 实时刷闲鱼，发现符合条件的商品后，用 AI 模型多模态分析商品图和描述，再通过 ntfy、企业微信、Bark、Telegram 或 Webhook 把结果第一时间推给你。任务、账号、AI 判断标准、运行日志和结果浏览都在一个 Web 管理界面里，Docker 一条命令就能跑起来，最新 release 是 10 月 9 日的 2.5 版。\n\n付费的闲鱼监控工具卖的就是“抢先发现 + 自动筛选”，它把这两样都做到了，还多了 AI 这一层：不用自己写一堆关键词规则，用自然语言描述“想要什么样的东西”，后台会生成分析标准；多任务可以并发跑，各绑不同的账号和代理。\n\n边界也很实在：AI 分析不是免费的，必须填自己的 OpenAI 兼容 API Key 和模型名，调用要花钱；登录态要靠 Chrome 扩展从浏览器里导出来粘贴，闲鱼风控随时可能让登录态失效；部署要 Docker 或 Python 3.10 + Node + Playwright 环境，不是一键双击就能用的软件。适合常在闲鱼蹲稀缺好价的人，不适合只想偶尔逛逛的用户。",
+    "added": "2026-11-06"
+  },
+  {
     "slug": "ghostty",
     "name": "Ghostty",
     "repo": "ghostty-org/ghostty",
